@@ -76,11 +76,9 @@
         <div class="cell narrow">{post.cat.name}</div>
         <div class="cell narrow">{post.cpd.name}</div>
         <div class="cell wide">
-          <strong>
-            {@html post.title.rendered}
-            {#if post.excerpt.rendered.length > 0}:{/if}
-          </strong>
+          {@html post.title.rendered}
           {#if post.excerpt}
+            :
             {@html post.excerpt.rendered}
           {/if}
         </div>

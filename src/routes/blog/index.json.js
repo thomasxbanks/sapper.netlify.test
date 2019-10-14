@@ -4,9 +4,10 @@ import download_file_httpget from '../../helpers/download_file_httpget';
 export async function get(req, res) {
   const endpoint = 'http://cooper-respitool-test.ci-dev.havaslynx.com/wp-json/wp/v2/publications?per_page=100'
   const posts = await fetch(endpoint).then(r => r.json())
-  
+  console.log(post)
   await posts.forEach(post => {
-    const endpoint = encodeURI(post.file.url)
+    const endpoint = post.file.url
+    console.log(endpoint)
     fetch(endpoint).then(publication => {
       download_file_httpget(endpoint)
     })
