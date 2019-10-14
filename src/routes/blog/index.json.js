@@ -1,16 +1,13 @@
-import posts from './_posts.js';
+import fetch from "isomorphic-fetch";
 
-const contents = JSON.stringify(posts.map(post => {
-	return {
-		title: post.title,
-		slug: post.slug
-	};
-}));
+export async function get(req, res) {
+  const endpoint = 'http://scrummable.com/wp-json/wp/v2/posts'
+  const posts = await fetch(endpoint).then(r => r.json())
 
-export function get(req, res) {
-	res.writeHead(200, {
-		'Content-Type': 'application/json'
-	});
+  res.writeHead(200, {
+    'Content-Type': 'application/json',
+  });
 
-	res.end(contents);
+  // Send the list of blog posts to our Svelte component
+  res.end(JSON.stringify(posts));
 }
