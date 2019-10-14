@@ -1,7 +1,7 @@
 import fetch from "isomorphic-fetch";
 
 export async function get(req, res) {
-  const endpoint = 'http://scrummable.com/wp-json/wp/v2/posts'
+  const endpoint = 'http://scrummable.com/wp-json/wp/v2/posts?per_page=100'
   const posts = await fetch(endpoint).then(r => r.json())
 
   res.writeHead(200, {
