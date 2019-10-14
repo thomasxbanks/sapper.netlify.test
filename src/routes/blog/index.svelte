@@ -42,10 +42,11 @@
   .posts_list :global([data-cpd="budesonide-formoterol"]) {
     background-color: lightskyblue;
   }
+  .posts_list :global([data-cpd="tezepelumab"]),
   .posts_list :global([data-cpd="benralizumab"]) {
     background-color: lightsteelblue;
   }
-  .posts_list :global([data-cpd="tezepelumab"]),
+  .posts_list :global([data-cpd="benralizumab-phase-iib-iii"]),
   .posts_list :global([data-cpd="tezepelumab-phase-iib-iii"]) {
     background-color: lightpink;
   }

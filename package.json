@@ -14,6 +14,7 @@
   "dependencies": {
     "compression": "^1.7.1",
     "isomorphic-fetch": "^2.2.1",
+    "lxl.utils": "^1.0.7",
     "polka": "next",
     "request": "^2.88.0",
     "sirv": "^0.4.0"

@@ -13,7 +13,7 @@ const download_file_httpget = function(file_url) {
     path: url.parse(file_url).pathname
   };
 
-  var file_name = url.parse(file_url).pathname.split('/').pop().toLowerCase();
+  var file_name = [...new Set(url.parse(file_url).pathname.split('/'))].filter(Boolean).pop().toLowerCase();
   var file = fs.createWriteStream(DOWNLOAD_DIR + file_name);
 
   http.get(options, function(res) {
