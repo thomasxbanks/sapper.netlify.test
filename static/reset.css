@@ -1,0 +1,208 @@
+html {
+  /* Prevents font resizing on Internet Explorer */
+  -ms-text-size-adjust: 100%;
+  /* Prevents font resizing on Chrome and Safari */
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  /* Forces padding to be considered part of the width of an element */
+  box-sizing: border-box;
+}
+
+html *,
+html *:before,
+html *:after {
+  /* Allows box-sizing to be overridden by a specific element with less conflict in specificity */
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  line-height: 1em;
+  /* Cleans up font appearance on Chrome and Safari */
+  -webkit-font-smoothing: antialiased;
+  /* Cleans up font appearance on Firefox */
+  -moz-osx-font-smoothing: grayscale;
+  /* Sorts out font styling */
+  text-rendering: optimizeLegibility;
+  /* Sorts out font styling */
+  font-feature-settings: "kern"1;
+  font-size-adjust: none;
+  font-variant: normal;
+  font-kerning: none;
+  font-variant-ligatures: none;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  overflow-x: hidden;
+}
+
+@supports (scroll-behavior: smooth) {
+  body {
+    /* Progressive enhancement. Animates scroll to anchor without JavaScript */
+    scroll-behavior: smooth;
+  }
+}
+
+main,
+section {
+  /* To fix IE not understanding these "new" tags */
+  display: block;
+}
+
+/* Normalise the typography settings across the site */
+/* Style the highlight selection of web copy */
+::selection {
+  color: white;
+  background: black;
+}
+
+/* Reset text elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Superscript and Subscript alignment */
+/* Fixes Chrome extending line-height to accomodate sub/sup text */
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 0.75em;
+}
+
+sup {
+  top: -0.4em;
+}
+
+sub {
+  bottom: -0.4em;
+}
+
+/* Buttons */
+button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-user-drag: none;
+  background: none;
+  border: 0;
+  user-select: none;
+  zoom: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+button * {
+  pointer-events: none;
+}
+
+/* Visual disabled state on cursor hover */
+[disabled],
+.disabled,
+[data-active="false"] {
+  cursor: not-allowed;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+nav ul,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove default styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class],
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Anchor elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  fill: currentColor;
+}
+
+input,
+button,
+textarea,
+select {
+  /* Removes default browser styles */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* Inherit fonts for inputs and buttons */
+  font: inherit;
+}
+
+input:not([type]),
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+select {
+  /* Kept as a list of input types */
+}
+
+*:focus {
+  /* If you add outline: none; in here I'm calling the police */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-play-state: paused !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
